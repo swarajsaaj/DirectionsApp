@@ -1,0 +1,21 @@
+<div>
+  <form #f='ngForm'>
+      <div class="form-group">
+          <label for="origin">Starting Location:</label>
+          <input ngx-google-places-autocomplete (onAddressChange)="f.value.origin=$event.formatted_address" type="text" name="origin" class="form-control" ngModel required>
+      </div>
+      <div class="form-group">
+          <label for="destination">Dropoff Location:</label>
+          <input ngx-google-places-autocomplete (onAddressChange)="f.value.destination=$event.formatted_address" type="text" name="destination" class="form-control" ngModel required>
+      </div>
+    <div *ngIf="routeParams">
+      Distance: {{routeParams.distance}}<br>
+      Time: {{routeParams.duration}}<br>
+     </div>
+     <br>
+    <button class="btn btn-primary" type="submit" (click)="findDirections(f.value)">{{ routeParams ? 'Re-Submit':'Submit'}}</button>
+    <button class="btn" type="reset" (click)="resetForm()">Reset</button>
+  
+  </form>
+
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="text-center">RouteLocator</h1>
+  <br>
+      <ng-http-loader [backgroundColor]="'#0055ff'"  [spinner]="spinkit.skThreeBounce"
+      ></ng-http-loader>
+<div class="row">
+  <div class="col-md-6">
+      <app-directions-form [routeParams]="routeParams" #dirForm (itinerarySubmitted)="itinerarySubmitted($event)"></app-directions-form>
+  </div>
+  <div class="col-md-6">
+      <app-directions-map [path]="path" #dirMap></app-directions-map>
+  </div>
+</div>
+</div>
