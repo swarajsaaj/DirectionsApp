@@ -4,12 +4,12 @@ import { GoogleMapsService } from './google-maps.service';
 
 describe('GoogleMapsService', () => {
 
-  mockGlobalGoogleMapObj();
-
+  
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [GoogleMapsService]
     });
+    mockGlobalGoogleMapObj();
   });
 
   it('should be created', inject([GoogleMapsService], (service: GoogleMapsService) => {
